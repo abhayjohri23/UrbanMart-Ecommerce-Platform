@@ -1,15 +1,13 @@
 package com.urbanmart.paymentservice.controllers;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/payments")
 public class PaymentController {
 
-    @GetMapping("/")
-    public String sayHelloWorld(){
-        return "Said Hello!";
+    @PostMapping("/{orderId}")
+    public String initiatePayment(@PathVariable String orderId){
+        return "received the order Id"+orderId;
     }
 }
